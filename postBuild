@@ -7,7 +7,7 @@ Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org')"
 Rscript -e "if (Sys.getenv('GITHUB_ACCESS_TOKEN') != '') Sys.setenv(GITHUB_PAT = Sys.getenv('GITHUB_ACCESS_TOKEN')); remotes::install_github('flowr-analysis/rstudio-addin-flowr@v0.1.2')"
 
 # Create the .Rprofile file with working directory logic
-cat <<EOF > /home/jovyan/.Rprofile
+cat <<EOF >> /home/jovyan/.Rprofile
 set_wd <- function(path) {
   try(if (dir.exists(path)) setwd(path), silent = TRUE)
 }
